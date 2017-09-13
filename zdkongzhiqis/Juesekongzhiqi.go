@@ -1,14 +1,14 @@
 package zdkongzhiqis
 
 import (
-	"changliang/zf"
-	"changliang/zfzhi"
 	"encoding/json"
 	"github.com/astaxie/beego"
-	"log"
-	"mhsydata/chushihuas"
 	"mhsydata/moxings"
+	"mhsydata/chushihuas"
 	"mhsydata/zdjueseyewus"
+	"changliang/zf"
+	"changliang/zfzhi"
+	"log"
 	"strconv"
 	"strings"
 )
@@ -16,13 +16,18 @@ import (
 type Juesekongzhiqi struct {
 	beego.Controller
 }
-func (c *Juesekongzhiqi) Get() {
+type Jueseliebiaokongzhiqi struct {
+	beego.Controller
+}
+
+func (c *Juesekongzhiqi)Get() {
 	canshu := c.GetString(zfzhi.Zhi.Mh() + zf.Zfs.Id(false))
 	id, err := strconv.Atoi(canshu)
 	if err != nil {
 		log.Println(err)
 		c.Data[zf.Zfs.Json(true)] = map[string]string{
-			zf.Zfs.Error05(false): chushihuas.Cuowus[zf.Zfs.Error05(false)].Zhi,
+			zf.Zfs.Error05(false):chushihuas.Cuowus[zf.Zfs.Error05(false)].Zhi,
+
 		}
 		c.ServeJSON()
 		return
@@ -32,7 +37,7 @@ func (c *Juesekongzhiqi) Get() {
 	c.ServeJSON()
 	return
 }
-func (c *Juesekongzhiqi) Post() {
+func (c *Juesekongzhiqi)Post() {
 	juese := moxings.Juese{}
 	json.Unmarshal(c.Ctx.Input.RequestBody, &juese)
 	serviceret := zdjueseyewus.Tianjiajuese(&juese)
@@ -47,7 +52,7 @@ func (c *Juesekongzhiqi) Post() {
 	c.ServeJSON()
 	return
 }
-func (c *Juesekongzhiqi) Patch() {
+func (c *Juesekongzhiqi)Patch() {
 	juese := moxings.Juese{}
 	json.Unmarshal(c.Ctx.Input.RequestBody, &juese)
 	serviceret := zdjueseyewus.Xiugaijuese(&juese)
@@ -62,13 +67,14 @@ func (c *Juesekongzhiqi) Patch() {
 	c.ServeJSON()
 	return
 }
-func (c *Juesekongzhiqi) Delete() {
+func (c *Juesekongzhiqi)Delete() {
 	canshu := c.GetString(zfzhi.Zhi.Mh() + zf.Zfs.Id(false))
 	id, err := strconv.Atoi(canshu)
 	if err != nil {
 		log.Println(err)
 		c.Data[zf.Zfs.Json(true)] = map[string]string{
-			zf.Zfs.Error05(false): chushihuas.Cuowus[zf.Zfs.Error05(false)].Zhi,
+			zf.Zfs.Error05(false):chushihuas.Cuowus[zf.Zfs.Error05(false)].Zhi,
+
 		}
 		c.ServeJSON()
 		return
@@ -82,6 +88,12 @@ func (c *Juesekongzhiqi) Delete() {
 		return
 	}
 	c.Data[zf.Zfs.Json(true)] = tishi
+	c.ServeJSON()
+	return
+}
+func (c *Jueseliebiaokongzhiqi) Post() {
+	ret := zdjueseyewus.Chaxunquanbujuese()
+	c.Data[zf.Zfs.Json(true)] = ret
 	c.ServeJSON()
 	return
 }
