@@ -1,11 +1,11 @@
 package main
-import(
-_"mhsydata/luyous"
-"github.com/astaxie/beego"
 
-
+import (
+	"github.com/astaxie/beego"
+	_ "mhsydata/luyous"
 )
-func main(){
-beego.Run()
+
+func main() {
+	beego.Run()
 
 }

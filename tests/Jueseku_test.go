@@ -1,49 +1,51 @@
 package tests
-import(
-"mhsydata/moxings"
-"testing"
-"log"
-"changliang/zfzhi"
-"mhsydata/zdjuesekus"
+
+import (
+	"changliang/zfzhi"
+	"log"
+	"mhsydata/moxings"
+	"mhsydata/zdjuesekus"
+	"testing"
 )
-func TestTianjiaduogeJuese(t *testing.T){
-juese2:=moxings.Juese{
-Biaoji:"BiaojiTianjiaduogeTest2",
-Bianma:"BianmaTianjiaduogeTest2",
-Mingcheng:"MingchengTianjiaduogeTest2",
-Id:zfzhi.Zhi.Shuzi1(),
+
+func TestTianjiaduogeJuese(t *testing.T) {
+	juese2 := moxings.Juese{
+		Biaoji:    "BiaojiTianjiaduogeTest2",
+		Bianma:    "BianmaTianjiaduogeTest2",
+		Mingcheng: "MingchengTianjiaduogeTest2",
+		Id:        zfzhi.Zhi.Shuzi1(),
+	}
+	juese3 := moxings.Juese{
+		Bianma:    "BianmaTianjiaduogeTest3",
+		Mingcheng: "MingchengTianjiaduogeTest3",
+		Id:        zfzhi.Zhi.Shuzi1(),
+		Biaoji:    "BiaojiTianjiaduogeTest3",
+	}
+	jueses := []moxings.Juese{juese2, juese3}
+	zdjuesekus.Tianjiaduoge(jueses)
 }
-juese3:=moxings.Juese{
-Bianma:"BianmaTianjiaduogeTest3",
-Mingcheng:"MingchengTianjiaduogeTest3",
-Id:zfzhi.Zhi.Shuzi1(),
-Biaoji:"BiaojiTianjiaduogeTest3",
+func TestTianjiayigeJuese(t *testing.T) {
+	juese := &moxings.Juese{
+		Id:        zfzhi.Zhi.Shuzi1(),
+		Biaoji:    "BiaojiTianjiayigeTest1",
+		Bianma:    "BianmaTianjiayigeTest1",
+		Mingcheng: "MingchengTianjiayigeTest1",
+	}
+	zdjuesekus.Tianjiayige(juese)
 }
-jueses:=[]moxings.Juese{juese2,juese3}
-zdjuesekus.Tianjiaduoge(jueses)
+func TestXiugaiyigeJuese(t *testing.T) {
+	juese := &moxings.Juese{
+		Mingcheng: "MingchengXiugaiyigeTest1",
+		Id:        zfzhi.Zhi.Shuzi1(),
+		Biaoji:    "BiaojiXiugaiyigeTest1",
+		Bianma:    "BianmaXiugaiyigeTest1",
+	}
+	zdjuesekus.Xiugaiyige(juese)
 }
-func TestTianjiayigeJuese(t *testing.T){
-juese:=&moxings.Juese{
-Id:zfzhi.Zhi.Shuzi1(),
-Biaoji:"BiaojiTianjiayigeTest1",
-Bianma:"BianmaTianjiayigeTest1",
-Mingcheng:"MingchengTianjiayigeTest1",
+func TestChaxunyigeJuese(t *testing.T) {
+	juese := zdjuesekus.Chaxunyige(zfzhi.Zhi.Shuzi1())
+	log.Println(juese)
 }
-zdjuesekus.Tianjiayige(juese)
-}
-func TestXiugaiyigeJuese(t *testing.T){
-juese:=&moxings.Juese{
-Mingcheng:"MingchengXiugaiyigeTest1",
-Id:zfzhi.Zhi.Shuzi1(),
-Biaoji:"BiaojiXiugaiyigeTest1",
-Bianma:"BianmaXiugaiyigeTest1",
-}
-zdjuesekus.Xiugaiyige(juese)
-}
-func TestChaxunyigeJuese(t *testing.T){
-juese:=zdjuesekus.Chaxunyige(zfzhi.Zhi.Shuzi1())
-log.Println(juese)
-}
-func TestShanchuyigeJuese(t *testing.T){
-zdjuesekus.Shanchuyige(zfzhi.Zhi.Shuzi1())
+func TestShanchuyigeJuese(t *testing.T) {
+	zdjuesekus.Shanchuyige(zfzhi.Zhi.Shuzi1())
 }

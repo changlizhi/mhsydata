@@ -1,6 +1,6 @@
 package chushihuas
-type Guojihua struct{
-Cuowu []Tongyong
-Tishi []Tongyong
 
+type Guojihua struct {
+	Cuowu []Tongyong
+	Tishi []Tongyong
 }
