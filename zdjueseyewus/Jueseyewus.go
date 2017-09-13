@@ -1,27 +1,20 @@
 package zdjueseyewus
 
 import (
+	"mhsydata/suoyoucuowus"
 	"bytes"
+	"time"
+	"mhsydata/moxings"
+	"gongju"
 	"changliang/zf"
 	"changliang/zfzhi"
-	"gongju"
-	"mhsydata/chushihuas"
-	"mhsydata/moxings"
-	"mhsydata/suoyoucuowus"
 	"mhsydata/zdjuesekus"
-	"time"
+	"mhsydata/chushihuas"
 )
 
 func yanzhengziduanchangdu(juese *moxings.Juese) error {
 	cuowu := false
 	buffer := bytes.Buffer{}
-
-	lenbiaoji := gongju.Liechangdu(zf.Zfs.Biaoji(false))
-	lenbiaojishiti := len(juese.Biaoji)
-	if lenbiaojishiti > int(lenbiaoji) {
-		cuowu = true
-		buffer.WriteString(gongju.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false), int64(lenbiaoji), lenbiaojishiti))
-	}
 
 	lenbianma := gongju.Liechangdu(zf.Zfs.Bianma(false))
 	lenbianmashiti := len(juese.Bianma)
@@ -36,8 +29,15 @@ func yanzhengziduanchangdu(juese *moxings.Juese) error {
 		cuowu = true
 		buffer.WriteString(gongju.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false), int64(lenmingcheng), lenmingchengshiti))
 	}
+
+	lenbiaoji := gongju.Liechangdu(zf.Zfs.Biaoji(false))
+	lenbiaojishiti := len(juese.Biaoji)
+	if lenbiaojishiti > int(lenbiaoji) {
+		cuowu = true
+		buffer.WriteString(gongju.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false), int64(lenbiaoji), lenbiaojishiti))
+	}
 	if cuowu {
-		return suoyoucuowus.Ziduancuowu{Shijian: time.Now(), Wenti: buffer.String()}
+		return suoyoucuowus.Ziduancuowu{Shijian:time.Now(), Wenti:buffer.String()}
 	}
 	return nil
 }
@@ -78,4 +78,7 @@ func Shanchujuese(id int) string {
 }
 func Chaxunjuese(id int) *moxings.Juese {
 	return zdjuesekus.Chaxunyige(id)
+}
+func Chaxunquanbujuese() []*moxings.Juese {
+	return zdjuesekus.Chaxunquanbu()
 }
