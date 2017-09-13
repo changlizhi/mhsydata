@@ -9,10 +9,10 @@ import (
 )
 func TestJueseyewusTianjia(t *testing.T){
 juese:=moxings.Juese{
-Biaoji:"JueseTianjia",
 Bianma:"JueseTianjia",
 Mingcheng:"JueseTianjia",
 Id:zfzhi.Zhi.Shuzi1(),
+Biaoji:"JueseTianjia",
 
 }
 zdjueseyewus.Tianjiajuese(&juese)

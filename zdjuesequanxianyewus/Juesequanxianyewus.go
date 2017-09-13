@@ -14,6 +14,13 @@ func yanzhengziduanchangdu(juesequanxian *moxings.Juesequanxian)error{
 cuowu:=false
 buffer:=bytes.Buffer{}
 
+lenbiaoji:=gongju.Liechangdu(zf.Zfs.Biaoji(false))
+lenbiaojishiti:=len(juesequanxian.Biaoji)
+if lenbiaojishiti>int(lenbiaoji){
+cuowu=true
+buffer.WriteString(gongju.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false),int64(lenbiaoji),lenbiaojishiti))
+}
+
 lenjuesebianma:=gongju.Liechangdu(zf.Zfs.Juesebianma(false))
 lenjuesebianmashiti:=len(juesequanxian.Juesebianma)
 if lenjuesebianmashiti>int(lenjuesebianma){
@@ -26,13 +33,6 @@ lenquanxianbianmashiti:=len(juesequanxian.Quanxianbianma)
 if lenquanxianbianmashiti>int(lenquanxianbianma){
 cuowu=true
 buffer.WriteString(gongju.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false),int64(lenquanxianbianma),lenquanxianbianmashiti))
-}
-
-lenbiaoji:=gongju.Liechangdu(zf.Zfs.Biaoji(false))
-lenbiaojishiti:=len(juesequanxian.Biaoji)
-if lenbiaojishiti>int(lenbiaoji){
-cuowu=true
-buffer.WriteString(gongju.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false),int64(lenbiaoji),lenbiaojishiti))
 }
 if cuowu{
 return suoyoucuowus.Ziduancuowu{Shijian:time.Now(),Wenti:buffer.String()}
@@ -57,14 +57,14 @@ return chushihuas.Tishis[zf.Zfs.Tishi09(false)].Bianma+zfzhi.Zhi.Xhx()+err.Error
 juesequanxianfind:=Chaxunjuesequanxian(juesequanxian.Id)
 if juesequanxianfind!=nil{
 
+if juesequanxian.Biaoji!=zfzhi.Zhi.Kzf(){
+juesequanxianfind.Biaoji=juesequanxian.Biaoji
+}
 if juesequanxian.Juesebianma!=zfzhi.Zhi.Kzf(){
 juesequanxianfind.Juesebianma=juesequanxian.Juesebianma
 }
 if juesequanxian.Quanxianbianma!=zfzhi.Zhi.Kzf(){
 juesequanxianfind.Quanxianbianma=juesequanxian.Quanxianbianma
-}
-if juesequanxian.Biaoji!=zfzhi.Zhi.Kzf(){
-juesequanxianfind.Biaoji=juesequanxian.Biaoji
 }
 return zdjuesequanxiankus.Xiugaiyige(juesequanxianfind)
 

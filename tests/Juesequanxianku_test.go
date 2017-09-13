@@ -8,16 +8,16 @@ import(
 )
 func TestTianjiaduogeJuesequanxian(t *testing.T){
 juesequanxian2:=moxings.Juesequanxian{
-Biaoji:"BiaojiTianjiaduogeTest2",
-Id:zfzhi.Zhi.Shuzi1(),
 Juesebianma:"JuesebianmaTianjiaduogeTest2",
 Quanxianbianma:"QuanxianbianmaTianjiaduogeTest2",
+Biaoji:"BiaojiTianjiaduogeTest2",
+Id:zfzhi.Zhi.Shuzi1(),
 }
 juesequanxian3:=moxings.Juesequanxian{
-Juesebianma:"JuesebianmaTianjiaduogeTest3",
-Quanxianbianma:"QuanxianbianmaTianjiaduogeTest3",
 Biaoji:"BiaojiTianjiaduogeTest3",
 Id:zfzhi.Zhi.Shuzi1(),
+Juesebianma:"JuesebianmaTianjiaduogeTest3",
+Quanxianbianma:"QuanxianbianmaTianjiaduogeTest3",
 }
 juesequanxians:=[]moxings.Juesequanxian{juesequanxian2,juesequanxian3}
 zdjuesequanxiankus.Tianjiaduoge(juesequanxians)

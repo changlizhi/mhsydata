@@ -21,8 +21,8 @@ Chushihuas[zf.Zfs.Ormdebug(false)].Zhi,
 }
 func ormermoxing(){
 orm.RegisterModel(
-new(moxings.Juesequanxian),
 new(moxings.Juese),
+new(moxings.Juesequanxian),
 
 )
 
