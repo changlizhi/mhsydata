@@ -66,3 +66,19 @@ func TestJuesepatch(t *testing.T) {
 	log.Println(w.Body.String())
 
 }
+func TestJueseliebiaopost(t *testing.T) {
+	canshu := zfzhi.Zhi.Postjuese()
+	r, _ := http.NewRequest(
+		zf.Zfs.POST(false),
+		zfzhi.Zhi.Xx()+zf.Zfs.Juese(true)+zfzhi.Zhi.Xx()+zf.Zfs.Quanbu(true),
+		bytes.NewBuffer([]byte(canshu)),
+	)
+	r.Header.Set(
+		zf.Zfs.Content(false)+zfzhi.Zhi.Jian()+zf.Zfs.Type(false),
+		zf.Zfs.Application(true)+zfzhi.Zhi.Xx()+zf.Zfs.Json(true),
+	)
+	w := httptest.NewRecorder()
+	beego.BeeApp.Handlers.ServeHTTP(w, r)
+	log.Println(w.Body.String())
+
+}
