@@ -9,10 +9,10 @@ import (
 )
 func TestJueseyewusTianjia(t *testing.T){
 juese:=moxings.Juese{
-Mingcheng:"JueseTianjia",
-Id:zfzhi.Zhi.Shuzi1(),
 Biaoji:"JueseTianjia",
 Bianma:"JueseTianjia",
+Mingcheng:"JueseTianjia",
+Id:zfzhi.Zhi.Shuzi1(),
 
 }
 zdjueseyewus.Tianjiajuese(&juese)
@@ -20,10 +20,10 @@ zdjueseyewus.Tianjiajuese(&juese)
 
 func TestJueseyewusXiugai(t *testing.T){
 juese:=moxings.Juese{
-Mingcheng:"JueseXiugai",
-Id:zfzhi.Zhi.Shuzi1(),
 Biaoji:"JueseXiugai",
 Bianma:"JueseXiugai",
+Mingcheng:"JueseXiugai",
+Id:zfzhi.Zhi.Shuzi1(),
 
 }
 zdjueseyewus.Xiugaijuese(&juese)
