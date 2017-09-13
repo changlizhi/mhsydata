@@ -8,10 +8,10 @@ import(
 )
 func TestTianjiaduogeJuese(t *testing.T){
 juese2:=moxings.Juese{
+Id:zfzhi.Zhi.Shuzi1(),
 Biaoji:"BiaojiTianjiaduogeTest2",
 Bianma:"BianmaTianjiaduogeTest2",
 Mingcheng:"MingchengTianjiaduogeTest2",
-Id:zfzhi.Zhi.Shuzi1(),
 }
 juese3:=moxings.Juese{
 Bianma:"BianmaTianjiaduogeTest3",
@@ -24,19 +24,19 @@ zdjuesekus.Tianjiaduoge(jueses)
 }
 func TestTianjiayigeJuese(t *testing.T){
 juese:=&moxings.Juese{
-Biaoji:"BiaojiTianjiayigeTest1",
-Bianma:"BianmaTianjiayigeTest1",
 Mingcheng:"MingchengTianjiayigeTest1",
 Id:zfzhi.Zhi.Shuzi1(),
+Biaoji:"BiaojiTianjiayigeTest1",
+Bianma:"BianmaTianjiayigeTest1",
 }
 zdjuesekus.Tianjiayige(juese)
 }
 func TestXiugaiyigeJuese(t *testing.T){
 juese:=&moxings.Juese{
+Id:zfzhi.Zhi.Shuzi1(),
 Biaoji:"BiaojiXiugaiyigeTest1",
 Bianma:"BianmaXiugaiyigeTest1",
 Mingcheng:"MingchengXiugaiyigeTest1",
-Id:zfzhi.Zhi.Shuzi1(),
 }
 zdjuesekus.Xiugaiyige(juese)
 }

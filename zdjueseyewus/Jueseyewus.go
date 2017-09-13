@@ -14,6 +14,13 @@ func yanzhengziduanchangdu(juese *moxings.Juese)error{
 cuowu:=false
 buffer:=bytes.Buffer{}
 
+lenmingcheng:=gongju.Liechangdu(zf.Zfs.Mingcheng(false))
+lenmingchengshiti:=len(juese.Mingcheng)
+if lenmingchengshiti>int(lenmingcheng){
+cuowu=true
+buffer.WriteString(gongju.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false),int64(lenmingcheng),lenmingchengshiti))
+}
+
 lenbiaoji:=gongju.Liechangdu(zf.Zfs.Biaoji(false))
 lenbiaojishiti:=len(juese.Biaoji)
 if lenbiaojishiti>int(lenbiaoji){
@@ -26,13 +33,6 @@ lenbianmashiti:=len(juese.Bianma)
 if lenbianmashiti>int(lenbianma){
 cuowu=true
 buffer.WriteString(gongju.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false),int64(lenbianma),lenbianmashiti))
-}
-
-lenmingcheng:=gongju.Liechangdu(zf.Zfs.Mingcheng(false))
-lenmingchengshiti:=len(juese.Mingcheng)
-if lenmingchengshiti>int(lenmingcheng){
-cuowu=true
-buffer.WriteString(gongju.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false),int64(lenmingcheng),lenmingchengshiti))
 }
 if cuowu{
 return suoyoucuowus.Ziduancuowu{Shijian:time.Now(),Wenti:buffer.String()}
@@ -57,14 +57,14 @@ return chushihuas.Tishis[zf.Zfs.Tishi09(false)].Bianma+zfzhi.Zhi.Xhx()+err.Error
 juesefind:=Chaxunjuese(juese.Id)
 if juesefind!=nil{
 
+if juese.Biaoji!=zfzhi.Zhi.Kzf(){
+juesefind.Biaoji=juese.Biaoji
+}
 if juese.Bianma!=zfzhi.Zhi.Kzf(){
 juesefind.Bianma=juese.Bianma
 }
 if juese.Mingcheng!=zfzhi.Zhi.Kzf(){
 juesefind.Mingcheng=juese.Mingcheng
-}
-if juese.Biaoji!=zfzhi.Zhi.Kzf(){
-juesefind.Biaoji=juese.Biaoji
 }
 return zdjuesekus.Xiugaiyige(juesefind)
 
