@@ -1,15 +1,15 @@
 package zdjueseyewus
 
 import (
-	"mhsydata/suoyoucuowus"
 	"bytes"
-	"time"
-	"mhsydata/moxings"
-	"gongju"
 	"changliang/zf"
 	"changliang/zfzhi"
-	"mhsydata/zdjuesekus"
+	"gongju"
 	"mhsydata/chushihuas"
+	"mhsydata/moxings"
+	"mhsydata/suoyoucuowus"
+	"mhsydata/zdjuesekus"
+	"time"
 )
 
 func yanzhengziduanchangdu(juese *moxings.Juese) error {
@@ -37,7 +37,7 @@ func yanzhengziduanchangdu(juese *moxings.Juese) error {
 		buffer.WriteString(gongju.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false), int64(lenbiaoji), lenbiaojishiti))
 	}
 	if cuowu {
-		return suoyoucuowus.Ziduancuowu{Shijian:time.Now(), Wenti:buffer.String()}
+		return suoyoucuowus.Ziduancuowu{Shijian: time.Now(), Wenti: buffer.String()}
 	}
 	return nil
 }

@@ -1,17 +1,17 @@
 package tests
 
 import (
-	"mhsydata/zdkongzhiqis"
-	"mhsydata/moxings"
-	"gongju"
 	"changliang/zf"
 	"changliang/zfzhi"
+	"gongju"
 	"log"
+	"mhsydata/moxings"
+	"mhsydata/zdkongzhiqis"
 	"strconv"
 	"testing"
 )
 
-func TestPostjuese(t*testing.T) {
+func TestPostjuese(t *testing.T) {
 	c := zdkongzhiqis.Juesekongzhiqi{}
 	gongju.Kongzhiqi(&c.Controller)
 	reqjson := zfzhi.Zhi.Postjuese()
@@ -20,7 +20,7 @@ func TestPostjuese(t*testing.T) {
 	log.Println(c.Data)
 
 }
-func TestPatchjuese(t*testing.T) {
+func TestPatchjuese(t *testing.T) {
 	c := zdkongzhiqis.Juesekongzhiqi{}
 	gongju.Kongzhiqi(&c.Controller)
 	reqjson := zfzhi.Zhi.Patchjuese()
@@ -33,7 +33,7 @@ func TestDeletejuese(t *testing.T) {
 	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1())
 	c := zdkongzhiqis.Juesekongzhiqi{}
 	gongju.Kongzhiqi(&c.Controller)
-	c.Ctx.Input.SetParam(zfzhi.Zhi.Mh() + zf.Zfs.Id(false), paramid)
+	c.Ctx.Input.SetParam(zfzhi.Zhi.Mh()+zf.Zfs.Id(false), paramid)
 	c.Delete()
 	log.Println(c.Data[zf.Zfs.Json(true)])
 
@@ -42,7 +42,7 @@ func TestGetjuese(t *testing.T) {
 	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1())
 	c := zdkongzhiqis.Juesekongzhiqi{}
 	gongju.Kongzhiqi(&c.Controller)
-	c.Ctx.Input.SetParam(zfzhi.Zhi.Mh() + zf.Zfs.Id(false), paramid)
+	c.Ctx.Input.SetParam(zfzhi.Zhi.Mh()+zf.Zfs.Id(false), paramid)
 	c.Get()
 	log.Println(c.Data[zf.Zfs.Json(true)])
 
