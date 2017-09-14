@@ -1,8 +1,10 @@
 package chushihuas
-import(
-"gongju"
-"changliang/zfzhi"
+
+import (
+	"changliang/zfzhi"
+	"gongju"
 )
-func Getapppath()string{
-return gongju.Getpath(zfzhi.Zhi.Kzf())
+
+func Getapppath() string {
+	return gongju.Getpath(zfzhi.Zhi.Kzf())
 }
