@@ -5,13 +5,13 @@ import (
 )
 
 type Dtziyuan struct {
-	Id             int
-	Chuangjianriqi time.Time
-	Biaoji         string
-	Mingcheng      string
-	Paixu          string
 	Bianma         string
 	Fubianma       string
 	Lujing         string
+	Id             int
+	Mingcheng      string
+	Paixu          int
+	Chuangjianriqi time.Time
 	Xiugairiqi     time.Time
+	Biaoji         string
 }

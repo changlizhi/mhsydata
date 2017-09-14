@@ -11,55 +11,55 @@ import (
 
 func TestTianjiaduogeDtziyuan(t *testing.T) {
 	dtziyuan2 := moxings.Dtziyuan{
-		Mingcheng:      "MingchengTianjiaduogeTest2",
-		Paixu:          "PaixuTianjiaduogeTest2",
-		Bianma:         "BianmaTianjiaduogeTest2",
-		Fubianma:       "FubianmaTianjiaduogeTest2",
 		Xiugairiqi:     time.Now(),
-		Id:             zfzhi.Zhi.Shuzi1(),
-		Chuangjianriqi: time.Now(),
 		Biaoji:         "BiaojiTianjiaduogeTest2",
+		Mingcheng:      "MingchengTianjiaduogeTest2",
+		Paixu:          zfzhi.Zhi.Shuzi1(),
+		Bianma:         "BianmaTianjiaduogeTest2",
 		Lujing:         "LujingTianjiaduogeTest2",
+		Chuangjianriqi: time.Now(),
+		Id:             zfzhi.Zhi.Shuzi1(),
+		Fubianma:       "FubianmaTianjiaduogeTest2",
 	}
 	dtziyuan3 := moxings.Dtziyuan{
+		Paixu:          zfzhi.Zhi.Shuzi1(),
+		Chuangjianriqi: time.Now(),
+		Lujing:         "LujingTianjiaduogeTest3",
+		Xiugairiqi:     time.Now(),
+		Biaoji:         "BiaojiTianjiaduogeTest3",
 		Id:             zfzhi.Zhi.Shuzi1(),
 		Mingcheng:      "MingchengTianjiaduogeTest3",
-		Paixu:          "PaixuTianjiaduogeTest3",
 		Bianma:         "BianmaTianjiaduogeTest3",
 		Fubianma:       "FubianmaTianjiaduogeTest3",
-		Chuangjianriqi: time.Now(),
-		Xiugairiqi:     time.Now(),
-		Lujing:         "LujingTianjiaduogeTest3",
-		Biaoji:         "BiaojiTianjiaduogeTest3",
 	}
 	dtziyuans := []moxings.Dtziyuan{dtziyuan2, dtziyuan3}
 	zddtziyuankus.Tianjiaduoge(dtziyuans)
 }
 func TestTianjiayigeDtziyuan(t *testing.T) {
 	dtziyuan := &moxings.Dtziyuan{
-		Paixu:          "PaixuTianjiayigeTest1",
+		Id:             zfzhi.Zhi.Shuzi1(),
+		Paixu:          zfzhi.Zhi.Shuzi1(),
 		Bianma:         "BianmaTianjiayigeTest1",
 		Chuangjianriqi: time.Now(),
-		Biaoji:         "BiaojiTianjiayigeTest1",
-		Id:             zfzhi.Zhi.Shuzi1(),
 		Mingcheng:      "MingchengTianjiayigeTest1",
 		Fubianma:       "FubianmaTianjiayigeTest1",
 		Lujing:         "LujingTianjiayigeTest1",
 		Xiugairiqi:     time.Now(),
+		Biaoji:         "BiaojiTianjiayigeTest1",
 	}
 	zddtziyuankus.Tianjiayige(dtziyuan)
 }
 func TestXiugaiyigeDtziyuan(t *testing.T) {
 	dtziyuan := &moxings.Dtziyuan{
-		Paixu:          "PaixuXiugaiyigeTest1",
+		Paixu:          zfzhi.Zhi.Shuzi1(),
+		Chuangjianriqi: time.Now(),
+		Fubianma:       "FubianmaXiugaiyigeTest1",
+		Lujing:         "LujingXiugaiyigeTest1",
+		Xiugairiqi:     time.Now(),
+		Biaoji:         "BiaojiXiugaiyigeTest1",
 		Id:             zfzhi.Zhi.Shuzi1(),
 		Mingcheng:      "MingchengXiugaiyigeTest1",
 		Bianma:         "BianmaXiugaiyigeTest1",
-		Fubianma:       "FubianmaXiugaiyigeTest1",
-		Lujing:         "LujingXiugaiyigeTest1",
-		Chuangjianriqi: time.Now(),
-		Xiugairiqi:     time.Now(),
-		Biaoji:         "BiaojiXiugaiyigeTest1",
 	}
 	zddtziyuankus.Xiugaiyige(dtziyuan)
 }

@@ -16,20 +16,6 @@ func yanzhengziduanchangdu(dtziyuan *moxings.Dtziyuan) error {
 	cuowu := false
 	buffer := bytes.Buffer{}
 
-	lenpaixu := gongju.Liechangdu(zf.Zfs.Paixu(false))
-	lenpaixushiti := len(dtziyuan.Paixu)
-	if lenpaixushiti > int(lenpaixu) {
-		cuowu = true
-		buffer.WriteString(gongju.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false), int64(lenpaixu), lenpaixushiti))
-	}
-
-	lenfubianma := gongju.Liechangdu(zf.Zfs.Fubianma(false))
-	lenfubianmashiti := len(dtziyuan.Fubianma)
-	if lenfubianmashiti > int(lenfubianma) {
-		cuowu = true
-		buffer.WriteString(gongju.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false), int64(lenfubianma), lenfubianmashiti))
-	}
-
 	lenlujing := gongju.Liechangdu(zf.Zfs.Lujing(false))
 	lenlujingshiti := len(dtziyuan.Lujing)
 	if lenlujingshiti > int(lenlujing) {
@@ -49,6 +35,13 @@ func yanzhengziduanchangdu(dtziyuan *moxings.Dtziyuan) error {
 	if lenmingchengshiti > int(lenmingcheng) {
 		cuowu = true
 		buffer.WriteString(gongju.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false), int64(lenmingcheng), lenmingchengshiti))
+	}
+
+	lenfubianma := gongju.Liechangdu(zf.Zfs.Fubianma(false))
+	lenfubianmashiti := len(dtziyuan.Fubianma)
+	if lenfubianmashiti > int(lenfubianma) {
+		cuowu = true
+		buffer.WriteString(gongju.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false), int64(lenfubianma), lenfubianmashiti))
 	}
 
 	lenbianma := gongju.Liechangdu(zf.Zfs.Bianma(false))
@@ -83,20 +76,17 @@ func Xiugaidtziyuan(dtziyuan *moxings.Dtziyuan) string {
 		if dtziyuan.Mingcheng != zfzhi.Zhi.Kzf() {
 			dtziyuanfind.Mingcheng = dtziyuan.Mingcheng
 		}
-		if dtziyuan.Lujing != zfzhi.Zhi.Kzf() {
-			dtziyuanfind.Lujing = dtziyuan.Lujing
-		}
-		if dtziyuan.Biaoji != zfzhi.Zhi.Kzf() {
-			dtziyuanfind.Biaoji = dtziyuan.Biaoji
-		}
-		if dtziyuan.Paixu != zfzhi.Zhi.Kzf() {
-			dtziyuanfind.Paixu = dtziyuan.Paixu
-		}
 		if dtziyuan.Bianma != zfzhi.Zhi.Kzf() {
 			dtziyuanfind.Bianma = dtziyuan.Bianma
 		}
 		if dtziyuan.Fubianma != zfzhi.Zhi.Kzf() {
 			dtziyuanfind.Fubianma = dtziyuan.Fubianma
+		}
+		if dtziyuan.Lujing != zfzhi.Zhi.Kzf() {
+			dtziyuanfind.Lujing = dtziyuan.Lujing
+		}
+		if dtziyuan.Biaoji != zfzhi.Zhi.Kzf() {
+			dtziyuanfind.Biaoji = dtziyuan.Biaoji
 		}
 		return zddtziyuankus.Xiugaiyige(dtziyuanfind)
 

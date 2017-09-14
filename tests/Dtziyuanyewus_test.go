@@ -11,29 +11,29 @@ import (
 
 func TestDtziyuanyewusTianjia(t *testing.T) {
 	dtziyuan := moxings.Dtziyuan{
-		Mingcheng:      "DtziyuanTianjia",
-		Paixu:          "DtziyuanTianjia",
-		Bianma:         "DtziyuanTianjia",
 		Id:             zfzhi.Zhi.Shuzi1(),
-		Lujing:         "DtziyuanTianjia",
+		Mingcheng:      "DtziyuanTianjia",
+		Bianma:         "DtziyuanTianjia",
 		Chuangjianriqi: time.Now(),
 		Xiugairiqi:     time.Now(),
-		Biaoji:         "DtziyuanTianjia",
+		Paixu:          zfzhi.Zhi.Shuzi1(),
 		Fubianma:       "DtziyuanTianjia",
+		Lujing:         "DtziyuanTianjia",
+		Biaoji:         "DtziyuanTianjia",
 	}
 	zddtziyuanyewus.Tianjiadtziyuan(&dtziyuan)
 }
 
 func TestDtziyuanyewusXiugai(t *testing.T) {
 	dtziyuan := moxings.Dtziyuan{
-		Fubianma:       "DtziyuanXiugai",
-		Xiugairiqi:     time.Now(),
-		Biaoji:         "DtziyuanXiugai",
-		Id:             zfzhi.Zhi.Shuzi1(),
 		Mingcheng:      "DtziyuanXiugai",
-		Paixu:          "DtziyuanXiugai",
-		Bianma:         "DtziyuanXiugai",
 		Lujing:         "DtziyuanXiugai",
+		Biaoji:         "DtziyuanXiugai",
+		Xiugairiqi:     time.Now(),
+		Id:             zfzhi.Zhi.Shuzi1(),
+		Paixu:          zfzhi.Zhi.Shuzi1(),
+		Bianma:         "DtziyuanXiugai",
+		Fubianma:       "DtziyuanXiugai",
 		Chuangjianriqi: time.Now(),
 	}
 	zddtziyuanyewus.Xiugaidtziyuan(&dtziyuan)
