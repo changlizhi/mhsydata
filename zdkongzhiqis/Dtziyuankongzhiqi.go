@@ -91,7 +91,21 @@ func (c *Dtziyuankongzhiqi) Delete() {
 }
 func (c *Dtziyuanliebiaokongzhiqi) Post() {
 	ret := zddtziyuanyewus.Chaxunquanbudtziyuan()
-	c.Data[zf.Zfs.Json(true)] = ret
+	allret := make(map[string][]*moxings.Dtziyuan)
+	fubianmas := make(map[string]string)
+	for _, r := range ret {
+		fubianmas[r.Fubianma] = r.Fubianma
+	}
+	for _, fubianma := range fubianmas {
+		bm := []*moxings.Dtziyuan{}
+		for _, r := range ret {
+			if r.Fubianma == fubianma {
+				bm = append(bm, r)
+			}
+		}
+		allret[fubianma] = bm
+	}
+	c.Data[zf.Zfs.Json(true)] = allret
 	c.ServeJSON()
 	return
 }
