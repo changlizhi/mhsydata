@@ -17,15 +17,15 @@ func Zuzhuangdtziyuan(leixing string, jige int, fangfa string) []*moxings.Dtziyu
 	for i := zfzhi.Zhi.Shuzi1(); i <= jige; i++ {
 		istring := strconv.Itoa(i)
 		dtziyuan := &moxings.Dtziyuan{
+			Chuangjianriqi: time.Now(),
+			Xiugairiqi:     time.Now(),
+			Biaoji:         leixing + zf.Zfs.Biaoji(false) + fangfa + istring,
 			Id:             i,
 			Mingcheng:      leixing + zf.Zfs.Mingcheng(false) + fangfa + istring,
+			Paixu:          i,
 			Bianma:         leixing + zf.Zfs.Bianma(false) + fangfa + istring,
 			Fubianma:       leixing + zf.Zfs.Fubianma(false) + fangfa + istring,
-			Chuangjianriqi: time.Now(),
-			Biaoji:         leixing + zf.Zfs.Biaoji(false) + fangfa + istring,
-			Paixu:          i,
 			Lujing:         leixing + zf.Zfs.Lujing(false) + fangfa + istring,
-			Xiugairiqi:     time.Now(),
 		}
 		ret = append(ret, dtziyuan)
 

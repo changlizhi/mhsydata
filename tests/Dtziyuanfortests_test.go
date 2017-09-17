@@ -2,6 +2,7 @@ package tests
 
 import (
 	"changliang/fanshe"
+	"changliang/zf"
 	"changliang/zfzhi"
 	"log"
 	"mhsydata/fortests"
@@ -9,8 +10,17 @@ import (
 )
 
 func TestZuzhuangdtziyuan(t *testing.T) {
-	obj := fortests.Zuzhuangdtziyuan("Luyou", zfzhi.Zhi.Shuzi4(), fanshe.Fangfaming(false))
-	jstr := fortests.Zuzhuangdtziyuanstring("Luyou", zfzhi.Zhi.Shuzi4(), fanshe.Fangfaming(false))
-	log.Println(obj)
-	log.Println(jstr)
+	jiegouti := fortests.Zuzhuangdtziyuan(
+		zf.Zfs.Test(true),
+		zfzhi.Zhi.Shuzi4(),
+		fanshe.Fangfaming(false),
+	)
+	log.Println("jiegouti:====", jiegouti)
+	jiegoutistring := fortests.Zuzhuangdtziyuanstring(
+		zf.Zfs.Test(true),
+		zfzhi.Zhi.Shuzi4(),
+		fanshe.Fangfaming(false),
+	)
+	log.Println("jiegoutistring:====", jiegoutistring)
+
 }
