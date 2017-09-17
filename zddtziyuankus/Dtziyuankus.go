@@ -21,7 +21,7 @@ func Tianjiayige(dtziyuan *moxings.Dtziyuan) string {
 	}
 	return chushihuas.Tishis[zf.Zfs.Tishi03(false)].Bianma
 }
-func Tianjiaduoge(dtziyuanshuzu []moxings.Dtziyuan) string {
+func Tianjiaduoge(dtziyuanshuzu []*moxings.Dtziyuan) string {
 	_, err := chushihuas.Defaultormer().InsertMulti(len(dtziyuanshuzu), dtziyuanshuzu)
 	if err != nil {
 		return chushihuas.Tishis[zf.Zfs.Tishi04(false)].Bianma
