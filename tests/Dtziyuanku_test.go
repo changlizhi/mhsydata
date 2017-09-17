@@ -10,41 +10,41 @@ import (
 	"testing"
 )
 
-func TestTianjiaduogeDtziyuan(t *testing.T) {
+func TestTianjiaduogeDtziyuankus(t *testing.T) {
 	dtziyuan := fortests.Zuzhuangdtziyuan(
 		zf.Zfs.Kus(false),
 		zfzhi.Zhi.Shuzi3(),
 		fanshe.Fangfaming(false),
 	)
-	zddtziyuankus.Tianjiaduoge(dtziyuan)
+	zddtziyuankus.Tianjiaduogekus(dtziyuan)
 
 }
-func TestTianjiayigeDtziyuan(t *testing.T) {
+func TestTianjiayigeDtziyuankus(t *testing.T) {
 	dtziyuan := fortests.Zuzhuangdtziyuan(
 		zf.Zfs.Kus(false),
 		zfzhi.Zhi.Shuzi1(),
 		fanshe.Fangfaming(false),
 	)
-	zddtziyuankus.Tianjiayige(dtziyuan[zfzhi.Zhi.Shuzi0()])
+	zddtziyuankus.Tianjiayigekus(dtziyuan[zfzhi.Zhi.Shuzi0()])
 
 }
-func TestXiugaiyigeDtziyuan(t *testing.T) {
+func TestXiugaiyigeDtziyuankus(t *testing.T) {
 	dtziyuan := fortests.Zuzhuangdtziyuan(
 		zf.Zfs.Kus(false),
 		zfzhi.Zhi.Shuzi1(),
 		fanshe.Fangfaming(false),
 	)
-	zddtziyuankus.Xiugaiyige(dtziyuan[zfzhi.Zhi.Shuzi0()])
+	zddtziyuankus.Xiugaiyigekus(dtziyuan[zfzhi.Zhi.Shuzi0()])
 
 }
-func TestChaxunyigeDtziyuan(t *testing.T) {
-	dtziyuan := zddtziyuankus.Chaxunyige(zfzhi.Zhi.Shuzi1())
+func TestChaxunyigeDtziyuankus(t *testing.T) {
+	dtziyuan := zddtziyuankus.Chaxunyigekus(zfzhi.Zhi.Shuzi1())
 	log.Println(dtziyuan)
 }
 func TestShanchuyigeDtziyuan(t *testing.T) {
-	zddtziyuankus.Shanchuyige(zfzhi.Zhi.Shuzi1())
+	zddtziyuankus.Shanchuyigekus(zfzhi.Zhi.Shuzi1())
 }
-func TestChaxunquanbuDtziyuan(t *testing.T) {
-	all := zddtziyuankus.Chaxunquanbu()
+func TestChaxunquanbuDtziyuankus(t *testing.T) {
+	all := zddtziyuankus.Chaxunquanbukus()
 	log.Println("all[zfzhi.Zhi.Shuzi0()]:====", all[zfzhi.Zhi.Shuzi0()])
 }
