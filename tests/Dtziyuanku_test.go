@@ -45,6 +45,11 @@ func TestShanchuyigeDtziyuan(t *testing.T) {
 	zddtziyuankus.Shanchuyigekus(zfzhi.Zhi.Shuzi1())
 }
 func TestChaxunquanbuDtziyuankus(t *testing.T) {
-	all := zddtziyuankus.Chaxunquanbukus()
+	dtziyuan := fortests.Zuzhuangdtziyuan(
+		zf.Zfs.Test(true),
+		zfzhi.Zhi.Shuzi1(),
+		fanshe.Fangfaming(false),
+	)
+	all := zddtziyuankus.Chaxunquanbukus(dtziyuan[zfzhi.Zhi.Shuzi0()])
 	log.Println("all[zfzhi.Zhi.Shuzi0()]:====", all[zfzhi.Zhi.Shuzi0()])
 }
