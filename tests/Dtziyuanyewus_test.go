@@ -38,6 +38,11 @@ func TestShanchuyigeyewus(t *testing.T) {
 	zddtziyuanyewus.Shanchuyigeyewus(zfzhi.Zhi.Shuzi1())
 }
 func TestChaxunquanbuyewus(t *testing.T) {
-	quanbu := zddtziyuanyewus.Chaxunquanbuyewus()
+	dtziyuan := fortests.Zuzhuangdtziyuan(
+		zf.Zfs.Test(true),
+		zfzhi.Zhi.Shuzi1(),
+		fanshe.Fangfaming(false),
+	)
+	quanbu := zddtziyuanyewus.Chaxunquanbuyewus(dtziyuan[zfzhi.Zhi.Shuzi0()])
 	log.Println("quanbu[zfzhi.Zhi.Shuzi0()]:====", quanbu[zfzhi.Zhi.Shuzi0()])
 }
