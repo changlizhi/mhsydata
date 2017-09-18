@@ -31,7 +31,7 @@ func (c *Dtziyuankongzhiqi) Get() {
 		c.ServeJSON()
 		return
 	}
-	dtziyuan := zddtziyuanyewus.Chaxundtziyuan(id)
+	dtziyuan := zddtziyuanyewus.Chaxunyigeyewus(id)
 	c.Data[zf.Zfs.Json(true)] = dtziyuan
 	c.ServeJSON()
 	return
@@ -39,7 +39,7 @@ func (c *Dtziyuankongzhiqi) Get() {
 func (c *Dtziyuankongzhiqi) Post() {
 	dtziyuan := moxings.Dtziyuan{}
 	json.Unmarshal(c.Ctx.Input.RequestBody, &dtziyuan)
-	serviceret := zddtziyuanyewus.Tianjiadtziyuan(&dtziyuan)
+	serviceret := zddtziyuanyewus.Tianjiayigeyewus(&dtziyuan)
 	tishi := chushihuas.Tishis[serviceret].Zhi
 	if tishi == zfzhi.Zhi.Kzf() {
 		splitret := strings.Split(serviceret, zfzhi.Zhi.Xhx())
@@ -54,7 +54,7 @@ func (c *Dtziyuankongzhiqi) Post() {
 func (c *Dtziyuankongzhiqi) Patch() {
 	dtziyuan := moxings.Dtziyuan{}
 	json.Unmarshal(c.Ctx.Input.RequestBody, &dtziyuan)
-	serviceret := zddtziyuanyewus.Xiugaidtziyuan(&dtziyuan)
+	serviceret := zddtziyuanyewus.Xiugaiyigeyewus(&dtziyuan)
 	tishi := chushihuas.Tishis[serviceret].Zhi
 	if tishi == zfzhi.Zhi.Kzf() {
 		splitret := strings.Split(serviceret, zfzhi.Zhi.Xhx())
@@ -77,7 +77,7 @@ func (c *Dtziyuankongzhiqi) Delete() {
 		c.ServeJSON()
 		return
 	}
-	serviceret := zddtziyuanyewus.Shanchudtziyuan(id)
+	serviceret := zddtziyuanyewus.Shanchuyigeyewus(id)
 	tishi := chushihuas.Tishis[serviceret].Zhi
 	if tishi == zfzhi.Zhi.Kzf() {
 		splitret := strings.Split(serviceret, zfzhi.Zhi.Xhx())
@@ -90,22 +90,8 @@ func (c *Dtziyuankongzhiqi) Delete() {
 	return
 }
 func (c *Dtziyuanliebiaokongzhiqi) Post() {
-	ret := zddtziyuanyewus.Chaxunquanbudtziyuan()
-	allret := make(map[string][]*moxings.Dtziyuan)
-	fubianmas := make(map[string]string)
-	for _, r := range ret {
-		fubianmas[r.Fubianma] = r.Fubianma
-	}
-	for _, fubianma := range fubianmas {
-		bm := []*moxings.Dtziyuan{}
-		for _, r := range ret {
-			if r.Fubianma == fubianma {
-				bm = append(bm, r)
-			}
-		}
-		allret[fubianma] = bm
-	}
-	c.Data[zf.Zfs.Json(true)] = allret
+	ret := zddtziyuanyewus.Chaxunquanbuyewus()
+	c.Data[zf.Zfs.Json(true)] = ret
 	c.ServeJSON()
 	return
 }

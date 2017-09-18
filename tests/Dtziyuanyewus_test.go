@@ -9,44 +9,44 @@ import (
 	"time"
 )
 
-func TestDtziyuanyewusTianjia(t *testing.T) {
+func TestTianjiayigeyewus(t *testing.T) {
 	dtziyuan := moxings.Dtziyuan{
+		Paixu:          zfzhi.Zhi.Shuzi1(),
+		Biaoji:         "DtziyuanTianjiayige",
 		Id:             zfzhi.Zhi.Shuzi1(),
-		Mingcheng:      "DtziyuanTianjia",
-		Bianma:         "DtziyuanTianjia",
+		Mingcheng:      "DtziyuanTianjiayige",
+		Bianma:         "DtziyuanTianjiayige",
+		Fubianma:       "DtziyuanTianjiayige",
+		Lujing:         "DtziyuanTianjiayige",
 		Chuangjianriqi: time.Now(),
 		Xiugairiqi:     time.Now(),
-		Paixu:          zfzhi.Zhi.Shuzi1(),
-		Fubianma:       "DtziyuanTianjia",
-		Lujing:         "DtziyuanTianjia",
-		Biaoji:         "DtziyuanTianjia",
 	}
-	zddtziyuanyewus.Tianjiadtziyuan(&dtziyuan)
+	zddtziyuanyewus.Tianjiayigeyewus(&dtziyuan)
 }
 
-func TestDtziyuanyewusXiugai(t *testing.T) {
+func TestXiugaiyigeyewus(t *testing.T) {
 	dtziyuan := moxings.Dtziyuan{
-		Mingcheng:      "DtziyuanXiugai",
-		Lujing:         "DtziyuanXiugai",
-		Biaoji:         "DtziyuanXiugai",
-		Xiugairiqi:     time.Now(),
+		Biaoji:         "DtziyuanXiugaiyige",
 		Id:             zfzhi.Zhi.Shuzi1(),
-		Paixu:          zfzhi.Zhi.Shuzi1(),
-		Bianma:         "DtziyuanXiugai",
-		Fubianma:       "DtziyuanXiugai",
+		Mingcheng:      "DtziyuanXiugaiyige",
+		Bianma:         "DtziyuanXiugaiyige",
+		Fubianma:       "DtziyuanXiugaiyige",
+		Lujing:         "DtziyuanXiugaiyige",
 		Chuangjianriqi: time.Now(),
+		Paixu:          zfzhi.Zhi.Shuzi1(),
+		Xiugairiqi:     time.Now(),
 	}
-	zddtziyuanyewus.Xiugaidtziyuan(&dtziyuan)
+	zddtziyuanyewus.Xiugaiyigeyewus(&dtziyuan)
 }
-func TestDtziyuanyewusChaxun(t *testing.T) {
-	dtziyuan := zddtziyuanyewus.Chaxundtziyuan(zfzhi.Zhi.Shuzi1())
+func TestChaxunyigeyewus(t *testing.T) {
+	dtziyuan := zddtziyuanyewus.Chaxunyigeyewus(zfzhi.Zhi.Shuzi1())
 	log.Println(dtziyuan)
 
 }
-func TestDtziyuanyewusShanchu(t *testing.T) {
-	zddtziyuanyewus.Shanchudtziyuan(zfzhi.Zhi.Shuzi1())
+func TestShanchuyigeyewus(t *testing.T) {
+	zddtziyuanyewus.Shanchuyigeyewus(zfzhi.Zhi.Shuzi1())
 }
-func TestDtziyuanyewusChaxunquanbu(t *testing.T) {
-	quanbu := zddtziyuanyewus.Chaxunquanbudtziyuan()
+func TestChaxunquanbuyewus(t *testing.T) {
+	quanbu := zddtziyuanyewus.Chaxunquanbuyewus()
 	log.Println("quanbu[zfzhi.Zhi.Shuzi0()]:====", quanbu[zfzhi.Zhi.Shuzi0()])
 }
