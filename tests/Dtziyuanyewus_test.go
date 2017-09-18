@@ -1,42 +1,33 @@
 package tests
 
 import (
+	"changliang/fanshe"
+	"changliang/zf"
 	"changliang/zfzhi"
 	"log"
-	"mhsydata/moxings"
+	"mhsydata/fortests"
 	"mhsydata/zddtziyuanyewus"
 	"testing"
-	"time"
 )
 
 func TestTianjiayigeyewus(t *testing.T) {
-	dtziyuan := moxings.Dtziyuan{
-		Paixu:          zfzhi.Zhi.Shuzi1(),
-		Biaoji:         "DtziyuanTianjiayige",
-		Id:             zfzhi.Zhi.Shuzi1(),
-		Mingcheng:      "DtziyuanTianjiayige",
-		Bianma:         "DtziyuanTianjiayige",
-		Fubianma:       "DtziyuanTianjiayige",
-		Lujing:         "DtziyuanTianjiayige",
-		Chuangjianriqi: time.Now(),
-		Xiugairiqi:     time.Now(),
-	}
-	zddtziyuanyewus.Tianjiayigeyewus(&dtziyuan)
+	dtziyuan := fortests.Zuzhuangdtziyuan(
+		zf.Zfs.Kus(false),
+		zfzhi.Zhi.Shuzi1(),
+		fanshe.Fangfaming(false),
+	)
+	zddtziyuanyewus.Tianjiayigeyewus(dtziyuan[zfzhi.Zhi.Shuzi0()])
+
 }
 
 func TestXiugaiyigeyewus(t *testing.T) {
-	dtziyuan := moxings.Dtziyuan{
-		Biaoji:         "DtziyuanXiugaiyige",
-		Id:             zfzhi.Zhi.Shuzi1(),
-		Mingcheng:      "DtziyuanXiugaiyige",
-		Bianma:         "DtziyuanXiugaiyige",
-		Fubianma:       "DtziyuanXiugaiyige",
-		Lujing:         "DtziyuanXiugaiyige",
-		Chuangjianriqi: time.Now(),
-		Paixu:          zfzhi.Zhi.Shuzi1(),
-		Xiugairiqi:     time.Now(),
-	}
-	zddtziyuanyewus.Xiugaiyigeyewus(&dtziyuan)
+	dtziyuan := fortests.Zuzhuangdtziyuan(
+		zf.Zfs.Kus(false),
+		zfzhi.Zhi.Shuzi1(),
+		fanshe.Fangfaming(false),
+	)
+	zddtziyuanyewus.Xiugaiyigeyewus(dtziyuan[zfzhi.Zhi.Shuzi0()])
+
 }
 func TestChaxunyigeyewus(t *testing.T) {
 	dtziyuan := zddtziyuanyewus.Chaxunyigeyewus(zfzhi.Zhi.Shuzi1())
