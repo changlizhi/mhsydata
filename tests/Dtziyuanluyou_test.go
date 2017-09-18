@@ -1,6 +1,7 @@
 package tests
 
 import (
+	"changliang/fanshe"
 	"changliang/zf"
 	"changliang/zfzhi"
 	"github.com/astaxie/beego"
@@ -9,6 +10,7 @@ import (
 
 	"bytes"
 	"log"
+	"mhsydata/fortests"
 	"testing"
 )
 
@@ -35,7 +37,10 @@ func TestDtziyuandelete(t *testing.T) {
 
 }
 func TestDtziyuanpost(t *testing.T) {
-	canshu := zfzhi.Zhi.Postdtziyuan()
+	canshu := fortests.Zuzhuangdtziyuanyigestring(
+		zf.Zfs.Test(true),
+		fanshe.Fangfaming(false),
+	)
 	r, _ := http.NewRequest(
 		zf.Zfs.POST(false),
 		zfzhi.Zhi.Xx()+zf.Zfs.Dtziyuan(true),
@@ -51,7 +56,10 @@ func TestDtziyuanpost(t *testing.T) {
 
 }
 func TestDtziyuanpatch(t *testing.T) {
-	canshu := zfzhi.Zhi.Patchdtziyuan()
+	canshu := fortests.Zuzhuangdtziyuanyigestring(
+		zf.Zfs.Test(true),
+		fanshe.Fangfaming(false),
+	)
 	r, _ := http.NewRequest(
 		zf.Zfs.PATCH(false),
 		zfzhi.Zhi.Xx()+zf.Zfs.Dtziyuan(true),
@@ -67,7 +75,10 @@ func TestDtziyuanpatch(t *testing.T) {
 
 }
 func TestDtziyuanliebiaopost(t *testing.T) {
-	canshu := zfzhi.Zhi.Postdtziyuan()
+	canshu := fortests.Zuzhuangdtziyuanyigestring(
+		zf.Zfs.Test(true),
+		fanshe.Fangfaming(false),
+	)
 	r, _ := http.NewRequest(
 		zf.Zfs.POST(false),
 		zfzhi.Zhi.Xx()+zf.Zfs.Dtziyuan(true)+zfzhi.Zhi.Xx()+zf.Zfs.Quanbu(true),
