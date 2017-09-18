@@ -90,7 +90,9 @@ func (c *Dtziyuankongzhiqi) Delete() {
 	return
 }
 func (c *Dtziyuanliebiaokongzhiqi) Post() {
-	ret := zddtziyuanyewus.Chaxunquanbuyewus()
+	dtziyuan := new(moxings.Dtziyuan)
+	json.Unmarshal(c.Ctx.Input.RequestBody, dtziyuan)
+	ret := zddtziyuanyewus.Chaxunquanbuyewus(dtziyuan)
 	c.Data[zf.Zfs.Json(true)] = ret
 	c.ServeJSON()
 	return
