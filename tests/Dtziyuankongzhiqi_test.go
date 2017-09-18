@@ -1,10 +1,12 @@
 package tests
 
 import (
+	"changliang/fanshe"
 	"changliang/zf"
 	"changliang/zfzhi"
 	"gongju"
 	"log"
+	"mhsydata/fortests"
 	"mhsydata/moxings"
 	"mhsydata/zdkongzhiqis"
 	"strconv"
@@ -14,7 +16,10 @@ import (
 func TestPostdtziyuan(t *testing.T) {
 	c := zdkongzhiqis.Dtziyuankongzhiqi{}
 	gongju.Kongzhiqi(&c.Controller)
-	reqjson := zfzhi.Zhi.Postdtziyuan()
+	reqjson := fortests.Zuzhuangdtziyuanyigestring(
+		zf.Zfs.Test(true),
+		fanshe.Fangfaming(false),
+	)
 	c.Ctx.Input.RequestBody = []byte(reqjson)
 	c.Post()
 	log.Println(c.Data)
@@ -23,7 +28,10 @@ func TestPostdtziyuan(t *testing.T) {
 func TestPatchdtziyuan(t *testing.T) {
 	c := zdkongzhiqis.Dtziyuankongzhiqi{}
 	gongju.Kongzhiqi(&c.Controller)
-	reqjson := zfzhi.Zhi.Patchdtziyuan()
+	reqjson := fortests.Zuzhuangdtziyuanyigestring(
+		zf.Zfs.Test(true),
+		fanshe.Fangfaming(false),
+	)
 	c.Ctx.Input.RequestBody = []byte(reqjson)
 	c.Patch()
 	log.Println(c.Data)
